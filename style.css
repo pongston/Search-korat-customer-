@@ -1,0 +1,5 @@
+body{font-family:Arial;margin:30px}
+input,button{margin:5px;padding:6px}
+table{border-collapse:collapse;width:100%}
+td,th{border:1px solid #ccc;padding:8px;text-align:center}
+td:last-child{color:red;cursor:pointer}

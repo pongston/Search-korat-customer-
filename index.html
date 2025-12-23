@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Customer System</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>ระบบจัดการข้อมูลหน่วยงาน</h2>
+<a href="/logout">Logout</a>
+
+<input id="customer" placeholder="Customer">
+<input id="site" placeholder="Site">
+<input id="agency" placeholder="Agency">
+<button onclick="add()">เพิ่ม</button>
+
+<table>
+<thead>
+<tr><th>Customer</th><th>Site</th><th>Agency</th><th>ลบ</th></tr>
+</thead>
+<tbody id="tb"></tbody>
+</table>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
