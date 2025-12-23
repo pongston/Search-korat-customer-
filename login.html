@@ -1,8 +1,10 @@
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        u = request.form.get("username")
-        p = request.form.get("password")
+        return "POST OK"
+
+    # ทดสอบว่า Flask หาไฟล์เจอหรือไม่
+    return render_template("login.html")
 
         cur = db().cursor()
         cur.execute(
