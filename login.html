@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Login</title>
-<link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-<h2>เข้าสู่ระบบ</h2>
-<form method="post">
-<input name="username" placeholder="Username"><br>
-<input name="password" type="password" placeholder="Password"><br>
-<button>Login</button>
-</form>
-<p>ค่าเริ่มต้น: admin / 1234</p>
-</body>
-</html>
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        u = request.form.get("username")
+        p = request.form.get("password")
+
+        cur = db().cursor()
+        cur.execute(
+            "SELECT * FROM users WHERE username=? AND password=?",
+            (u, p)
+        )
+        if cur.fetchone():
+            session["user"] = u
+            return redirect("/")
+
+    return render_template("login.html")
