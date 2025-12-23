@@ -1,18 +1,18 @@
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        return "POST OK"
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
 
-    # ทดสอบว่า Flask หาไฟล์เจอหรือไม่
-    return render_template("login.html")
+<h2>เข้าสู่ระบบ</h2>
 
-        cur = db().cursor()
-        cur.execute(
-            "SELECT * FROM users WHERE username=? AND password=?",
-            (u, p)
-        )
-        if cur.fetchone():
-            session["user"] = u
-            return redirect("/")
+<form method="post">
+    <input name="username" placeholder="Username" required>
+    <input name="password" type="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+</form>
 
-    return render_template("login.html")
+</body>
+</html>
